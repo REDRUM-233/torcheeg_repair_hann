@@ -56,7 +56,7 @@ class BaseDataset(Dataset):
                                               total=len(records),
                                               position=0,
                                               leave=False,
-                                              dynamic_ncols=True):
+                                              dynamic_ncols=True,):
                         worker_results.append(
                             self.save_record(io_path=self.io_path,
                                              io_size=self.io_size,

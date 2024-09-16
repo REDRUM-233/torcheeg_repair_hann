@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from joblib import Parallel, delayed
 from torch.utils.data import Dataset
-from tqdm import tqdm
+from tqdm.notebook import tqdm
 
 from torcheeg.io import EEGSignalIO, MetaInfoIO
 

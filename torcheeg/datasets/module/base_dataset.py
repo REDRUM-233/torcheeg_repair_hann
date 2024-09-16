@@ -55,7 +55,8 @@ class BaseDataset(Dataset):
                                               desc="[PROCESS]",
                                               total=len(records),
                                               position=0,
-                                              leave=None):
+                                              leave=False,
+                                              dynamic_ncols=True):
                         worker_results.append(
                             self.save_record(io_path=self.io_path,
                                              io_size=self.io_size,
@@ -87,7 +88,8 @@ class BaseDataset(Dataset):
                                                   desc="[PROCESS]",
                                                   total=len(records),
                                                   position=0,
-                                                  leave=None))
+                                                  leave=False,
+                                                  dynamic_ncols=True))
                 except Exception as e:
                     # shutil to delete the database
                     shutil.rmtree(self.io_path)
@@ -214,7 +216,8 @@ class BaseDataset(Dataset):
             pbar = tqdm(disable=not verbose,
                         desc=f"[RECORD {file}]",
                         position=1,
-                        leave=None)
+                        leave=False,
+                        dynamic_ncols=True)
 
             # pbar.write(
             #     "Monitoring the detailed processing of a record. The detailed processing of other records will not be reported to keep it clean."
